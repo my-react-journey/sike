@@ -1,0 +1,82 @@
+:root {
+    --gradientBackground: -webkit-linear-gradient( -70deg, #db469f 0%, #2188ff 100% );
+    --boxShadow: #b0b0b01f;
+    --nextBlue: #0070f3;
+    --nextBlueHover: hsl(212, 100%, 38%);
+    --whiteText: #FFFFFF;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.welcomeText {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: var(--gradientBackground);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.whatIsThis {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.whatIsThisSpan{
+    max-width: 80vw;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0.5rem 0 0;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.saySikeButton {
+    padding: 0.2em 0.5em;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    color: var(--whiteText);
+    background-color: var(--nextBlue);
+    border: 0;
+    outline: none;
+    margin-top: 1rem;
+    -webkit-box-shadow: 4px 4px 3px 1px var(--boxShadow);
+    box-shadow: 4px 4px 3px 1px var(--boxShadow);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.saySikeButton:hover {
+    background-color: var(--nextBlueHover);
+    background: var(--nextBlueHover) radial-gradient(circle, transparent 1%, var(--nextBlueHover) 1%) center/15000%;
+}
+
+.saySikeButton:active {
+    background-color: var(--nextBlue);
+    background-size: 100%;
+    transition: background 0s;
+  }
