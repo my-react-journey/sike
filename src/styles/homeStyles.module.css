@@ -25,6 +25,7 @@
     -webkit-text-fill-color: transparent;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+    margin-top: 2rem;
 }
 
 .whatIsThis {

@@ -32,7 +32,7 @@ function HomePage() {
 					className={styles.saySikeButton}
 					onClick={handleClick}
 				>
-					Start Siking! 😂
+					Start Siking!
 				</button>
 			</div>
 		</>
