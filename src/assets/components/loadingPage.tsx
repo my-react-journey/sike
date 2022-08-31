@@ -5,8 +5,10 @@ function LoadingPage() {
 
 	return (
 		<>
-			<div className={styles.requestLoader}>
-				<img src={sikeLogo} alt="Sike Logo" height={128} width={128} />
+			<div className={styles.wrapper}>
+				<div className={styles.requestLoader}>
+					<img src={sikeLogo} alt="Sike Logo" height={128} width={128} />
+				</div>
 			</div>
 		</>
 	)
