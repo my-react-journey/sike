@@ -6,6 +6,7 @@ import AboutSike from "./routes/aboutSike"
 import NewSike from "./routes/newSike"
 import NewUser from "./routes/newUser"
 import NoLocation from "./routes/noLocation"
+import Faq from "./routes/faq"
 import Sike from "./routes/sike"
 import HomePage from "./assets/components/homePage"
 
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 			<Route path="newSike" element={<NewSike />} />
 			<Route path="newUser" element={<NewUser />} />
 			<Route path="noLocation" element={<NoLocation />} />
+			<Route path="faq" element={<Faq />} />
 			<Route path="home" element={<HomePage />} />
 			<Route path="sikes/:sikeId" element={<Sike />} />
 			
