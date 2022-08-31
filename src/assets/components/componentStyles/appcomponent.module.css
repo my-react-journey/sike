@@ -50,39 +50,13 @@
     align-items: flex-end;
     justify-content: center;
     background-color: var(--nextBlueLight);
-    padding: 0.45em 0.25em;
+    padding: 0.45em;
     font-size: 2rem;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 4px 3px 3px 1px #0b0b0b2e;
 }
 
-.pencilEmoji {
-    font-size: 2rem;
-    line-height: 2rem;
-}
-
-.plusIcon {
-    margin-left: -0.5rem;
-    font-size: 1rem;
-}
-
-.createNewSike {
-    padding: 0.2em 0.5em;
-    border-radius: 8px;
-    font-size: 1.8rem;
-    color: var(--whiteText);
-    background-color: var(--nextBlue);
-    border: 0;
-    outline: none;
-    margin-top: 1rem;
-    -webkit-box-shadow: 4px 4px 3px 1px var(--boxShadow);
-    box-shadow: 4px 4px 3px 1px var(--boxShadow);
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-}
-
-.createNewSike > * {
+.createButton > * {
     pointer-events: none;
 }
