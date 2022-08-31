@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import styles from "../../styles/homeStyles.module.css"
+import styles from "./componentStyles/homePage.module.css"
 import sikeLogo from "./componentImages/sikeLogo.webp"
 
 function HomePage() {
