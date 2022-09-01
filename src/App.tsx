@@ -19,6 +19,12 @@ export default function App() {
 			let locationData : any
 			try {
 				locationData = await getCurrentPosition()
+				let data = {
+					latitude: locationData.coords.latitude,
+					longitude: locationData.coords.longitude,
+					accuracy: locationData.coords.accuracy
+				}
+				await setStorage("location", data)
 				setIsLoading(false)
 				return true
 			} catch (error) {
