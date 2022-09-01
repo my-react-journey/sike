@@ -7,22 +7,25 @@ import settingsSVG from "../../assets/components/svgs/settings.svg"
 
 import { getCurrentPosition } from "../../utilities/geolocation"
 import endpoint from "../../APIEndpoint"
-import { SikeProps } from "../../utilities/types"
+import { LocationProp, SikeProps } from "../../utilities/types"
 import SikesContainer from "./Sike"
 
 export default function AppComponent() {
 
 	let [sikes, setSikes] = useState([] as SikeProps[])
+	let [location, setLocation] = useState({} as LocationProp)
 
 	let fetchSikes = async (): Promise<void> => {
 		try {
 				
 			let position = await getCurrentPosition()
 			
-			let location = {
+			let location :LocationProp = {
 				latitude: position.coords.latitude,
 				longitude: position.coords.longitude
 			}
+
+			setLocation(location)
 
 			let response = await fetch(`${endpoint}/sike/getAll?latitude=${location.latitude}&longitude=${location.longitude}`)
 			let data = await response.json()
@@ -41,13 +44,7 @@ export default function AppComponent() {
 		<>
 			<div className={styles.wrapper}>
 				<Header />
-
-				<div className={styles.sikesContainer}>
-
-					<SikesContainer sikes={sikes}/>
-
-				</div>
-
+				<SikesContainer sikes={sikes} location={location}/>
 				<SikeCreator />
 			</div>
 		</>

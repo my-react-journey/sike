@@ -57,18 +57,20 @@ body {
 }
 
 .createButton {
-	position: absolute;
-	bottom: 2rem;
-	right: 2rem;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	background-color: var(--nextBlueLight);
-	padding: 0.45em;
-	font-size: 2rem;
-	border-radius: 50%;
-	cursor: pointer;
-	box-shadow: 4px 3px 3px 1px #0b0b0b2e;
+	position: -webkit-sticky;
+	position: sticky;
+    width: 30px;
+    bottom: 2rem;
+    margin: 0 1.6rem 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: var(--whiteText);
+    padding: 0.45em;
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 4px 3px 3px 1px #0b0b0b82;
 }
 
 .createButton > * {
