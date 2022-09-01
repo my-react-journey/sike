@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom"
+import { useEffect, useRef } from "react"
+import { getCurrentPosition } from "../utilities/geolocation"
+import { getStorage } from "../utilities/indexedDb"
+import endpoint from "../APIEndpoint"
 import styles from "./styles/newSike.module.css"
 import campaign from "../assets/components/svgs/campaign.svg"
 import back from "../assets/components/svgs/back.svg"
-import { useEffect, useRef } from "react"
 
 export default function NewSike() {
 	let inputLimit: number = 280
@@ -62,12 +65,48 @@ export default function NewSike() {
 	})
 
 
-	let postSike = () => {
-		// get post content, check for abnomalities,
-		// post it to API
-		// after 201, do the following
+	let postSike = async () => {
+		
+		try {
+			let position = await getCurrentPosition()
+			let text = sikeInputTextarea.current?.value
+			let user = await getStorage("user")
+			
+			if(user == null || user == undefined) {
+				navigate("/newUser")
+				return
+			}
 
-		navigate(-1)
+			let userid = user?._id
+			
+			let data = {
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude,
+				text,
+				userid
+			}
+
+			let response = await fetch(`${endpoint}/sike/new`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(data)
+			})
+
+			if (response.status == 201) {
+				window.localStorage.removeItem("text")
+				console.debug("Sike posted")
+				navigate("/")
+			} else {
+				console.debug("Error posting Sike")
+			}
+
+		} catch (error) {
+			console.debug(error)
+			navigate("/noLocation")
+		}
+		
 	}
 
 	return (
@@ -87,6 +126,7 @@ export default function NewSike() {
 						alt="Post new Sike"
 						height={30}
 						width={30}
+						onClick={postSike}
 					/>
 				</div>
 

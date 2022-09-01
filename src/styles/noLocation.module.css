@@ -1,5 +1,6 @@
 :root {
     --lightRed: #f3624c;
+    --brightRed: #dd2c00;
     --nextBlue: #0070f3;
     --fontWhite: #FFFFFF;
 }
@@ -30,11 +31,12 @@
 }
 
 .makeSure {
-    color: var(--lightRed);
+    color: var(--brightRed);
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 2.1rem;
     font-weight: 600;
     max-width: 90vw;
+    line-height: 2.1rem;
 }
 
 .learnMore {
