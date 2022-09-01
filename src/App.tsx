@@ -1,5 +1,5 @@
 import AppComponent from "./assets/components/AppComponent"
-import LoadingPage from "./assets/components/loadingPage"
+// import LoadingPage from "./assets/components/loadingPage"
 import { getStorage, setStorage } from "./utilities/indexedDb"
 import { getCurrentPosition } from "./utilities/geolocation"
 import { useEffect, useState } from "react"
@@ -25,14 +25,17 @@ export default function App() {
 				return navigate("/noLocation")
 			}
 
-		}, 2000)
-	})
+		}, 0)
+	}, [])
 
-	if (isLoading) {
-		return <LoadingPage />
-	} else {
-		return <AppComponent />
-	}
+	return (
+		<AppComponent />
+	)
+	// if (isLoading) {
+	// 	return <AppComponent />
+	// } else {
+	// 	return <AppComponent />
+	// }
 
 	// if user is authorized
 	// if location is enabled
