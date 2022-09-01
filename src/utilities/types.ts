@@ -17,5 +17,12 @@ export type SikeProps = {
 }
 
 export type SikeCardProps = {
-	sike: SikeProps
+	sike: SikeProps,
+	location: LocationProp
+}
+
+export type LocationProp = {
+	latitude: number,
+	longitude: number,
+    accuracy?: number
 }
