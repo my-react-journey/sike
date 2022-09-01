@@ -1,0 +1,93 @@
+:root {
+    --gradientBackground: -webkit-linear-gradient( -70deg, #db469f 0%, #2188ff 100% );
+    --boxShadowColor: #44444444;
+    --nextBlue: #0070f3;
+    --nextBlueLight: hsl(212, 100%, 68%);
+    --nextBlueHover: hsl(212, 100%, 38%);
+    --whiteText: #FFFFFF;
+    --bodyBackground: #FFFFFF;
+    --textColor: #000000;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--nextBlue);
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0px 2px 4px 0.5px var(--boxShadowColor);
+}
+
+.header img {
+    cursor: pointer;
+}
+
+.appText {
+    font-family: "Medium", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--whiteText);
+    padding-left: 0.6rem;
+}
+
+.sikeInputContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 200px;
+    padding: 0.5rem;
+    border: 2px solid var(--boxShadowColor);
+    border-radius: 8px;
+    margin: 2rem 0.5rem;
+}
+
+.sikeInput {
+    resize: none;
+    height: 200px;
+    border: 0;
+    outline: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: var(--bodyBackground);
+    color: var(--textColor);
+}
+
+.inputCharsRemaining {
+    text-align: right;
+    color: var(--nextBlue);
+    padding-top: 5px;
+    font-weight: 600;
+}
+
+.inputRemaining {
+    font-size: 2rem;
+}
+
+.blueText {
+    color: var(--nextBlue);
+}
+
+.violetText {
+    color: #aa00ff;
+}
+
+.redText {
+    color: #e51f26;
+}
