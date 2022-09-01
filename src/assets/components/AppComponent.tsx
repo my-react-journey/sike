@@ -46,7 +46,7 @@ export default function AppComponent() {
 					onClick={createNew}
 					className={styles.createButton}
 				>
-					<img src={pencil} alt="Pencil - Create new sike" height={30} width={30} />
+					<img src={pencil} alt="Pencil Create new sike" height={30} width={30} />
 				</div>
 			</div>
 		</>
