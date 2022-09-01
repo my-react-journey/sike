@@ -11,14 +11,64 @@ export default function NewSike() {
 	let inputRemaining = useRef<HTMLSpanElement>(null)
 
 	let navigate = useNavigate()
-  let postSike = () => {
 
-    // get post content, check for abnomalities,
-    // post it to API
-    // after 201, do the following
+	let handleColorChange = (): string | undefined => {
+		let colorOne = "#0070f3"
+		let colorTwo = "#aa00ff"
+		let colorThree = "#e51f26"
 
-    navigate(-1)
-  }
+		let textField = sikeInputTextarea.current
+		let letterCount = textField?.value?.length ?? 0
+		let remaining = inputLimit - letterCount
+
+		if (remaining < 0) {
+			if(sikeInputTextarea.current?.value != undefined)
+
+			sikeInputTextarea.current.value = sikeInputTextarea.current.value.slice(0, inputLimit)
+			return
+		}
+
+
+		let text = textField?.value
+
+		if(inputRemaining.current != undefined) {
+			inputRemaining.current.innerText = remaining.toString()
+			
+			let percent = remaining / inputLimit
+
+			if (percent > 0.6) {
+				inputRemaining.current.style.color = colorOne
+			} else if (percent > 0.4) {
+				inputRemaining.current.style.color = colorTwo
+			} else {
+				inputRemaining.current.style.color = colorThree
+			}
+		}
+
+		return text
+	}
+
+	let handleInput = () => {
+		let text = handleColorChange()
+		window.localStorage.setItem("text", text || "")
+	}
+
+	useEffect(() => {
+		let text = window.localStorage.getItem("text")
+		if (text != null) {
+			sikeInputTextarea.current!.value = text
+			handleColorChange()
+		}
+	})
+
+
+	let postSike = () => {
+		// get post content, check for abnomalities,
+		// post it to API
+		// after 201, do the following
+
+		navigate(-1)
+	}
 
 	return (
 		<>
