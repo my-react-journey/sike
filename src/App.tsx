@@ -34,9 +34,14 @@ export default function App() {
 		}, 0)
 	}, [])
 
-	return (
-		<AppComponent />
-	)
+	if(isLoading) {
+		return ( <></>)
+	} else {
+		return (
+			<AppComponent />
+		)
+	}
+
 	// if (isLoading) {
 	// 	return <AppComponent />
 	// } else {
